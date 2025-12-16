@@ -2,11 +2,16 @@
 <html>
 <head>
   <title>Student List</title>
+  <link rel="stylesheet" href="css/students.css">
+  <style>
+    
+  </style>
 </head>
 <body>
 
   <!-- ✅ Navbar -->
-  <div id="navbar" style="padding: 10px; background: #f0f0f0; border-bottom: 1px solid #ccc;">
+  <div id="navbar">
+    <a href="index.html">Home</a> |
     <a href="register.html">Register</a> |
     <a href="students.html">Student List</a> |
     <a href="#" onclick="logout()">Logout</a>
@@ -14,13 +19,13 @@
 
   <h1>All Students</h1>
 
-  <table border="1">
+  <table>
     <thead>
       <tr>
         <th>Name</th>
         <th>Age</th>
         <th>Grade</th>
-        <th>Actions</th>
+        <th id="actionHeader">Actions</th>
       </tr>
     </thead>
     <tbody id="studentTable"></tbody>
@@ -29,6 +34,7 @@
   <script>
     // ✅ Auth check
     const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");  // 👈 role must be saved at login
     if (!token) {
       alert("Please login first");
       window.location.href = "login.html";
@@ -37,6 +43,7 @@
     // ✅ Logout function
     function logout() {
       localStorage.removeItem("token");
+      localStorage.removeItem("role");
       window.location.href = "login.html";
     }
 
@@ -53,17 +60,36 @@
 
       students.forEach(student => {
         const row = document.createElement("tr");
-        row.innerHTML = `
-          <td><input type="text" value="${student.name}" id="name-${student.id}" /></td>
-          <td><input type="number" value="${student.age}" id="age-${student.id}" /></td>
-          <td><input type="text" value="${student.grade}" id="grade-${student.id}" /></td>
-          <td>
-            <button onclick="updateStudent(${student.id})">Update</button>
-            <button onclick="deleteStudent(${student.id})">Delete</button>
-          </td>
-        `;
+
+        if (role === "student") {
+          // ✅ Students only see plain text (NO inputs or buttons)
+          row.innerHTML = `
+            <td>${student.name}</td>
+            <td>${student.age}</td>
+            <td>${student.grade}</td>
+            <td>-</td>
+          `;
+        } else {
+          // ✅ Admin/Teacher can edit & delete
+          row.innerHTML = `
+            <td><input type="text" value="${student.name}" id="name-${student.id}" /></td>
+            <td><input type="number" value="${student.age}" id="age-${student.id}" /></td>
+            <td><input type="text" value="${student.grade}" id="grade-${student.id}" /></td>
+            <td>
+              <button onclick="updateStudent(${student.id})">Update</button>
+              <button onclick="deleteStudent(${student.id})">Delete</button>
+            </td>
+          `;
+        }
+
         table.appendChild(row);
       });
+
+      // Hide Actions column for students
+      if (role === "student") {
+        document.getElementById("actionHeader").style.display = "none";
+        document.querySelectorAll("td:last-child").forEach(td => td.style.display = "none");
+      }
     }
 
     async function updateStudent(id) {
@@ -84,7 +110,7 @@
         alert("Updated successfully");
         loadStudents();
       } else {
-        alert("Update failed");
+        alert("Update failed (maybe not allowed).");
       }
     }
 
@@ -100,7 +126,7 @@
         alert("Deleted");
         loadStudents();
       } else {
-        alert("Error deleting student.");
+        alert("Error deleting student (maybe not allowed).");
       }
     }
 

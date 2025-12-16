@@ -1,0 +1,115 @@
+/* ===== GLOBAL THEME (SAME ACROSS ALL PAGES) ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* ===== NAVBAR ===== */
+#navbar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 30px;
+  background-color: rgb(198, 176, 176);
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#navbar a:hover {
+  text-decoration: underline;
+}
+
+/* ===== PAGE TITLE ===== */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin: 30px 0 20px;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 80%;
+  margin: 0 auto 40px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+/* Table header */
+thead {
+  background-color: #333;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover row */
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* ===== INPUTS INSIDE TABLE ===== */
+table input {
+  width: 90%;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* ===== ACTION BUTTONS ===== */
+button {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Update button */
+button:nth-child(1) {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Delete button */
+button:nth-child(2) {
+  background-color: #dc3545;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  table {
+    width: 95%;
+  }
+
+  #navbar {
+    flex-wrap: wrap;
+  }
+}

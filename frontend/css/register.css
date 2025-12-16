@@ -1,0 +1,67 @@
+/* ===== GLOBAL THEME ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* ===== NAVBAR ===== */
+.register-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: rgb(198, 176, 176);
+}
+
+.register-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* ===== REGISTER FORM ===== */
+.register-form {
+  background: #ffffff;
+  width: 320px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register-form h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-form input,
+.register-form button {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.register-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-form button:hover {
+  background-color: #0056b3;
+}

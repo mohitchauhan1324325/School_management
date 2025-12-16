@@ -1,0 +1,70 @@
+/* ===== GLOBAL THEME (SAME AS OTHER PAGES) ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+
+  /* center content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Heading ===== */
+h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* ===== Paragraph ===== */
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* ===== Navigation ===== */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+nav ul li a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Buttons ===== */
+button {
+  font-size: 14px;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

@@ -14,6 +14,8 @@ import auth
 from database import engine, SessionLocal, get_db
 from models import Base
 
+
+
 # ------------------ Create Tables ------------------
 Base.metadata.create_all(bind=engine)
 

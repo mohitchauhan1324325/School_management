@@ -2,19 +2,19 @@
 <html>
 <head>
   <title>Register Student</title>
+  <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
 
   <!-- ✅ Navbar -->
-  <div id="navbar" style="padding: 10px; background: #f0f0f0; border-bottom: 1px solid #ccc;">
+  <div class="register-nav" id="navbar" style="padding: 10px; background: #f0f0f0; border-bottom: 1px solid #ccc;">
     <a href="register.html">Register</a> |
     <a href="students.html">Student List</a> |
     <a href="#" onclick="logout()">Logout</a>
   </div>
 
-  <h1>Register Student</h1>
-
-  <form id="studentForm">
+  <form class="register-form" id="studentForm">
+    <h1>Register Student</h1>
     <input type="text" id="name" placeholder="Name" required><br><br>
     <input type="number" id="age" placeholder="Age" required><br><br>
     <input type="text" id="grade" placeholder="Grade" required><br><br>
