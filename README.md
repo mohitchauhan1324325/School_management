@@ -1,18 +1,34 @@
-# Student Management System (Demo Project)
+# 🎓 School Management System
 
-This project is a basic student management system created using Python,HTML and JavaScript.It includes command-line interfaces for adding, updating, and viewing student records.
+## 📌 Project Description
+The School Management System is a full-stack web application designed to manage student data efficiently and securely. It provides role-based access control, allowing admins and teachers to manage students while students can only view their information.
 
-## Technologies Used
--Javascript
--HTML
+This project demonstrates frontend–backend integration, authentication, authorization, and CRUD operations using modern web technologies.
+
+## 🚀 Features
+- Login and Signup authentication
+- JWT-based authorization
+- Role-based access control (Admin / Teacher / Student)
+- Student registration and management
+- View, update, and delete student records
+- Clean and consistent UI across all pages
+
+## 🛠️ Technologies Used
+**Frontend**
+- HTML
+- CSS
+- JavaScript
+
+**Backend**
 - Python
-- Basic File Handling
+- FastAPI
+- JWT Authentication
 
-## Features
-- Add/Edit student records
-- Simple command-line interface
+**Database**
+- MongoDB
 
-## How to Run
-Clone the repository and run the relevant `.py` files using any compiler or Python 3.
+## 🎯 Purpose
+This project is built for learning and demonstrating full-stack web development concepts, including authentication, REST APIs, and role-based access control.
 
-This project was created as part of my MCA coursework.
+## 👨‍💻 Author
+Mohit Chauhan
