@@ -1,8 +1,9 @@
 services:
   - type: web
-    name: school-app
+    name: school-management-backend
     env: python
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port 10000
-    plan: free
-    autoDeploy: true
+    region: singapore
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    pythonVersion: 3.10.13
