@@ -8,7 +8,6 @@ This project demonstrates frontend–backend integration, authentication, author
 ## 🚀 Features
 - Login and Signup authentication
 - JWT-based authorization
-- Role-based access control (Admin / Teacher / Student)
 - Student registration and management
 - View, update, and delete student records
 - Clean and consistent UI across all pages
